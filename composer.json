@@ -1,0 +1,35 @@
+{
+    "name": "hidayat/restclient",
+    "description": "A Package for handling rest api request in laravel, This package provide interface over PHP cURL Api",
+    "authors": [
+        {
+            "name": "hidayat ullah",
+            "email": "hidayat3676@gmail.com",
+            "homepage": "https://vuonlinesupport.com",
+            "role": "Developer"
+        }
+    ],
+    "type": "library",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "^5.0 || ^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "hidayat\\restclient\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "hidayat\\restclient\\RestClientServiceProvider"
+            ],
+            "aliases": {
+                "Client": "hidayat\\restclient\\client\\Facades\\Client"
+            }
+        }
+    }
+
+}
