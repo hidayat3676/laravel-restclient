@@ -37,13 +37,6 @@ class RestClient
      */
     private $getData = [];
     /**
-     * The method used for the request default is GET
-     */
-    const METHOD_POST = 'POST';
-    const METHOD_DELETE = 'DELETE';
-    const METHOD_PUT = 'PUT';
-
-    /**
      * Send the request to the url
      *
      * @param $url
