@@ -42,6 +42,7 @@ class RestClient
      * @param $url
      * @return bool|string
      */
+    const METHOD_POST = 'POST';
     public function call($url){
 
         if (!is_null($this->getData)){
@@ -83,7 +84,7 @@ class RestClient
         }
         $res = curl_exec($ch);
         if (!$res){
-            return 'Code' . curl_getinfo($ch, CURLINFO_HTTP_CODE) .' ' .  curl_error($ch) . curl_errno($ch) ;
+            return 'Code ' . curl_getinfo($ch, CURLINFO_RESPONSE_CODE) .' ' .  curl_error($ch) . curl_errno($ch) ;
         }
         curl_close($ch);
 
