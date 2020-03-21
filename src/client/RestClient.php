@@ -42,7 +42,11 @@ class RestClient
      * @param $url
      * @return bool|string
      */
+    /**
+     * Request post method
+     */
     const METHOD_POST = 'POST';
+
     public function call($url){
 
         if (!is_null($this->getData)){
