@@ -46,14 +46,14 @@ $postData = "field1=somevalue&field2=somefield2";
 
 <code>
 $response = Client::setPostData($postData)
-->setMethod(Client::METHOD_POST) // (Optional here) require only when not sending post data
+->setMethod('post') // (Optional here) require only when not sending post data
 ->setHeaders($headers)
 ->call($url);
 
 //PUT method example
 
 $response = Client::setPostData($postData)
-->setMethod(Client::METHOD_PUT) 
+->setMethod('put') 
 ->setHeaders($headers)
 ->call($url);
 
