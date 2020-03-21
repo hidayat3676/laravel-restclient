@@ -3,7 +3,7 @@
 namespace hidayat\restclient;
 
 use Illuminate\Support\ServiceProvider;
-use hidayat\restclient\src\client\RestClient;
+use hidayat\restclient\client\RestClient;
 class RestClientServiceProvider extends ServiceProvider
 {
 
@@ -19,6 +19,10 @@ class RestClientServiceProvider extends ServiceProvider
             return new RestClient();
 
         });
+
+        $this->app->when('client')
+            ->needs(RestClient::METHOD_POST)
+            ->give(RestClient::METHOD_POST);
     }
 
     /**

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace hidayat\restclient\src\client;
+namespace hidayat\restclient\client;
 
 
 class RestClient
@@ -90,7 +90,7 @@ class RestClient
         }
         $res = curl_exec($ch);
         if (!$res){
-            return  curl_getinfo($ch, CURLINFO_HTTP_CODE) . curl_error($ch) . curl_errno($ch) ;
+            return 'Code' . curl_getinfo($ch, CURLINFO_HTTP_CODE) .' ' .  curl_error($ch) . curl_errno($ch) ;
         }
         curl_close($ch);
 

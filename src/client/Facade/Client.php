@@ -1,7 +1,7 @@
 <?php
 
 
-namespace hidayat\restclient\src\client\Facade;
+namespace hidayat\restclient\Facade;
 use \Illuminate\Support\Facades\Facade;
 
 class Client extends Facade
