@@ -1,6 +1,7 @@
 {
     "name": "hidayat/restclient",
     "description": "A Package for handling rest api request in laravel, This package provide interface over PHP cURL Api",
+    "keywords": "laravel rest client, rest client, client, http client",
     "authors": [
         {
             "name": "hidayat ullah",
