@@ -22,11 +22,6 @@ class RestClient
      */
     private $header = [];
     /**
-     * whether the request require @BasicHttpAuth or not
-     * @var bool
-     */
-    private $httpBasicAuth = false;
-    /**
      * HttpBasicAuth Credentials if require
      * @var array
      */
@@ -48,7 +43,12 @@ class RestClient
     const METHOD_DELETE = 'DELETE';
     const METHOD_PUT = 'PUT';
 
-
+    /**
+     * Send the request to the url
+     *
+     * @param $url
+     * @return bool|string
+     */
     public function call($url){
 
         if (!is_null($this->getData)){
@@ -97,36 +97,73 @@ class RestClient
         return $res;
 
     }
+
+    /**
+     * Set PHP cURL Options
+     *
+     * @param array $options
+     * @return $this
+     */
     public function setOptions(array $options)  {
         $this->curlOptions = $options;
 
         return $this;
     }
 
+    /**
+     * Form data to be sent to the server with request
+     *
+     * @param $postData
+     * @return $this
+     */
     public function setPostData($postData)  {
         $this->postData = $postData;
 
         return $this;
     }
 
+    /**
+     * Any Query param to be sent to server with the request
+     *
+     * @param array $getData
+     * @return $this
+     */
     public function setGetData(array $getData)  {
         $this->getData = $getData;
 
         return $this;
     }
 
+    /**
+     * Set Any header to be sent to the server with request
+     *
+     * @param array $headers
+     * @return $this
+     */
     public function setHeaders(array $headers){
         $this->header = $headers;
 
         return $this;
     }
 
+    /**
+     * The HttpBasicAuth credentials
+     *
+     * @param array $credential
+     * @return $this
+     */
     public function setHttpBasicAuthData(array $credential){
         $this->httpBasicAuthData = $credential;
         $this->httpBasicAuth = true;
         return $this;
     }
 
+    /**
+     * Set the request method
+     *
+     * @param $method
+     * @return $this
+     */
     public function setMethod($method){
         $this->method = $method;
 

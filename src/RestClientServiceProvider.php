@@ -23,6 +23,14 @@ class RestClientServiceProvider extends ServiceProvider
         $this->app->when('client')
             ->needs(RestClient::METHOD_POST)
             ->give(RestClient::METHOD_POST);
+
+        $this->app->when('client')
+            ->needs(RestClient::METHOD_PUT)
+            ->give(RestClient::METHOD_PUT);
+
+        $this->app->when('client')
+            ->needs(RestClient::METHOD_DELETE)
+            ->give(RestClient::METHOD_DELETE);
     }
 
     /**
