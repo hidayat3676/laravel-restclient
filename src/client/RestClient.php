@@ -111,7 +111,7 @@ class RestClient
     /**
      * Form data to be sent to the server with request
      *
-     * @param $postData
+     * @param string $postData
      * @return $this
      */
     public function setPostData($postData)  {
@@ -159,7 +159,7 @@ class RestClient
     /**
      * Set the request method
      *
-     * @param $method
+     * @param string $method
      * @return $this
      */
     public function setMethod($method){
